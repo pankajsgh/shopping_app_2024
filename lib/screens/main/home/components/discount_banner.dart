@@ -38,7 +38,7 @@ class DiscountBanner extends StatelessWidget {
           Image.asset("assets/images/shoes2.png", height: 100,),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
-            child: Image.asset("assets/images/tshirt.png", fit: BoxFit.cover,height: 120,),
+            child: Image.asset("assets/images/tshirt.png", fit: BoxFit.cover,height: 110,),
           ),
         ],
       ),

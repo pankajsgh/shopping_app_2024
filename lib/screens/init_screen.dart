@@ -39,6 +39,7 @@ class _InitScreenState extends State<InitScreen> {
     return Scaffold(
       body: pages[currentSelectedIndex],
       bottomNavigationBar: NavigationBar(
+        height: 52,
         onDestinationSelected: updateCurrentIndex,
         selectedIndex: currentSelectedIndex,
         labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,

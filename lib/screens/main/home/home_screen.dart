@@ -3,10 +3,10 @@ import 'package:shopping_app_2024/config/constants.dart';
 import '../../cart/cart_screen.dart';
 import 'components/categories.dart';
 import 'components/discount_banner.dart';
-import 'components/home_header.dart';
 import 'components/icon_btn_with_counter.dart';
 import 'components/popular_product.dart';
 import 'components/recommended_product.dart';
+import 'components/search_field.dart';
 import 'components/special_offers.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -37,20 +37,20 @@ class HomeScreen extends StatelessWidget {
             automaticallyImplyLeading: false,
             bottom: AppBar(
               backgroundColor: backgroundColor,
-              toolbarHeight: 73,
+              toolbarHeight: 70,
               automaticallyImplyLeading: false,
-              title: const HomeHeader(),
+              title: const SearchField(),
             ),
             flexibleSpace: FlexibleSpaceBar(
                 background: Align(
                   alignment: Alignment.topLeft,
                   child: Padding(
-                    padding: const EdgeInsets.only(top:30.0),
-                    child: Image.asset("assets/images/logo.png", height: 60,),
+                    padding: const EdgeInsets.only(top:50.0),
+                    child: Image.asset("assets/images/logo.png", height: 60,color: Colors.blue,),
                   ),
                 )//Images.network
             ), //FlexibleSpaceBar
-            expandedHeight: 140,
+            expandedHeight: 130,
               actions: [
                     Padding(
                       padding: const EdgeInsets.only(top: 8.0),
@@ -74,17 +74,15 @@ class HomeScreen extends StatelessWidget {
           ),
           SliverAppBar(
             backgroundColor: backgroundColor,
-            expandedHeight: 240,
+            expandedHeight: 220,
             automaticallyImplyLeading: false,
             flexibleSpace: const FlexibleSpaceBar(
-                background: Align(
-                  alignment: Alignment.topLeft,
-                  child: Column(
-                    children: [
-                      DiscountBanner(),
-                      Categories(),
-                    ],
-                  )
+                background: Column(
+                  children: [
+                    SizedBox(height: 10,),
+                    DiscountBanner(),
+                    Categories(),
+                  ],
                 )//Images.network
             ),
           ),

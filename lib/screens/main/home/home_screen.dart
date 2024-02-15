@@ -26,27 +26,31 @@ class HomeScreen extends StatelessWidget {
     Color backgroundColor = kPrimaryColorThird;
 
     return Scaffold(
+
       body:  CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: <Widget>[
           SliverAppBar(
-            backgroundColor: backgroundColor,
+            backgroundColor: Colors.white,
             snap: false,
             pinned: true,
             floating: true,
             automaticallyImplyLeading: false,
             bottom: AppBar(
-              backgroundColor: backgroundColor,
-              toolbarHeight: 70,
+              backgroundColor: Colors.transparent,
+              toolbarHeight: 62,
               automaticallyImplyLeading: false,
               title: const SearchField(),
             ),
             flexibleSpace: FlexibleSpaceBar(
-                background: Align(
-                  alignment: Alignment.topLeft,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top:50.0),
-                    child: Image.asset("assets/images/logo.png", height: 60,color: Colors.blue,),
+                background: Container(
+                  color: backgroundColor,
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.only(top:50.0),
+                      child: Image.asset("assets/images/logo.png", height: 60,color: Colors.blue,),
+                    ),
                   ),
                 )//Images.network
             ), //FlexibleSpaceBar

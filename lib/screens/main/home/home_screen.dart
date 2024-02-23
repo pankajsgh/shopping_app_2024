@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color backgroundColor = kPrimaryColorThird;
+    Color backgroundColor = kPrimaryColor;
 
     return Scaffold(
 
@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         slivers: <Widget>[
           SliverAppBar(
-            backgroundColor: Colors.white,
+            backgroundColor: backgroundColor,
             snap: false,
             pinned: true,
             floating: true,
@@ -40,7 +40,7 @@ class HomeScreen extends StatelessWidget {
               backgroundColor: Colors.transparent,
               toolbarHeight: 62,
               automaticallyImplyLeading: false,
-              title: const SearchField(),
+              title: const SafeArea(child: SearchField()),
             ),
             flexibleSpace: FlexibleSpaceBar(
                 background: Container(
@@ -48,13 +48,14 @@ class HomeScreen extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.topLeft,
                     child: Padding(
-                      padding: const EdgeInsets.only(top:50.0),
-                      child: Image.asset("assets/images/logo.png", height: 60,color: Colors.blue,),
+                      padding: const EdgeInsets.only(top:40.0),
+                      child: Image.asset("assets/images/logo.png", height: 60,
+                        color: Colors.white,),
                     ),
                   ),
                 )//Images.network
             ), //FlexibleSpaceBar
-            expandedHeight: 130,
+            expandedHeight: 140,
               actions: [
                     Padding(
                       padding: const EdgeInsets.only(top: 8.0),
@@ -76,17 +77,17 @@ class HomeScreen extends StatelessWidget {
                     const SizedBox(width: 20,)
                   ],
           ),
-          SliverAppBar(
+           SliverAppBar(
             backgroundColor: backgroundColor,
-            expandedHeight: 220,
+            expandedHeight: 226,
             automaticallyImplyLeading: false,
             flexibleSpace: const FlexibleSpaceBar(
                 background: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    SizedBox(height: 10,),
                     DiscountBanner(),
                     Categories(),
-                  ],
+                  ]
                 )//Images.network
             ),
           ),

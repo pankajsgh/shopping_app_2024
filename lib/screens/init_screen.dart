@@ -8,7 +8,7 @@ import 'main/profile/profile_screen.dart';
 const Color inActiveIconColor = Color(0xFF878787);
 
 class InitScreen extends StatefulWidget {
-  InitScreen({super.key});
+  const InitScreen({super.key});
 
   static String routeName = "/";
 

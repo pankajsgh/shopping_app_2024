@@ -17,7 +17,7 @@ class Categories extends StatelessWidget {
       {"icon": "assets/icons/Discover.svg", "text": "More"},
     ];
     return Padding(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,

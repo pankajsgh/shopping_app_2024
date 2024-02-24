@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../config/constants.dart';
+import 'main/chat/profile_screen.dart';
 import 'main/favorite/favorite_screen.dart';
 import 'main/home/home_screen.dart';
 import 'main/profile/profile_screen.dart';
@@ -28,10 +29,8 @@ class _InitScreenState extends State<InitScreen> {
   final pages = [
     HomeScreen(),
     const FavoriteScreen(),
-    const Center(
-      child: Text("Chat"),
-    ),
-     ProfileScreen()
+    Chat(),
+    ProfileScreen()
   ];
 
   @override

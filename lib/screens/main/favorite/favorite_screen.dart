@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shopping_app_2024/components/product_card.dart';
 import 'package:shopping_app_2024/models/Product.dart';
-
 import '../../details/details_screen.dart';
 
 class FavoriteScreen extends StatelessWidget {
@@ -10,11 +9,8 @@ class FavoriteScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(
-        statusBarIconBrightness: Brightness.dark,
-      ),
-    );
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
+
     return SafeArea(
       child: Column(
         children: [

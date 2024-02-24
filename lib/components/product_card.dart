@@ -11,13 +11,13 @@ class ProductCard extends StatelessWidget {
     this.aspectRatio = 1.02,
     required this.product,
     required this.onPress,
-    required this.index
+    required this.heroId
   }) : super(key: key);
 
   final double width, aspectRatio;
   final Product product;
   final VoidCallback onPress;
-  final index;
+  final int heroId;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class ProductCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Hero(
-                    tag:"${product.id}_$index",
+                    tag:"${product.id}_${heroId}",
                     child: Image.asset(product.images[0])),
               ),
             ),

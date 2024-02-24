@@ -26,7 +26,7 @@ class ProductsScreen extends StatelessWidget {
               crossAxisSpacing: 16,
             ),
             itemBuilder: (context, index) => ProductCard(
-              index: 0,
+              heroId: 0,
               product: demoProducts[index],
               onPress: () => Navigator.pushNamed(
                 context,

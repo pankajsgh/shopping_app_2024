@@ -39,7 +39,7 @@ class RecommendedProducts extends StatelessWidget {
                     return Padding(
                       padding: const EdgeInsets.only(left: 20),
                       child: ProductCard(
-                        index: heroId,
+                        heroId: heroId,
                         product: demoProducts[index],
                         onPress: () => Navigator.pushNamed(
                           context,

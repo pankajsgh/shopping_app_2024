@@ -25,7 +25,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   void initState() {
     super.initState();
     // Fetch user data from API using BuildContext
-    _getBatteryLevel();
+    //_getBatteryLevel();
   }
 
   Future<void> _getBatteryLevel() async {
@@ -44,6 +44,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarIconBrightness: Brightness.dark,
+      ),
+    );
     return Scaffold(
       // appBar: AppBar(
       //   title: const Text("Profile"),

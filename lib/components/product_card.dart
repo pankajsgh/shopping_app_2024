@@ -8,14 +8,16 @@ class ProductCard extends StatelessWidget {
   const ProductCard({
     Key? key,
     this.width = 140,
-    this.aspectRetio = 1.02,
+    this.aspectRatio = 1.02,
     required this.product,
     required this.onPress,
+    required this.index
   }) : super(key: key);
 
-  final double width, aspectRetio;
+  final double width, aspectRatio;
   final Product product;
   final VoidCallback onPress;
+  final index;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,7 @@ class ProductCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Hero(
-                    tag:"${product.id}",
+                    tag:"${product.id}_$index",
                     child: Image.asset(product.images[0])),
               ),
             ),

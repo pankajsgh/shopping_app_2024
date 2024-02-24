@@ -6,7 +6,11 @@ import '../../../products/products_screen.dart';
 import 'section_title.dart';
 
 class PopularProducts extends StatelessWidget {
-  const PopularProducts({super.key});
+  int heroId;
+  PopularProducts({
+    Key? key,
+    required this.heroId,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,15 +37,18 @@ class PopularProducts extends StatelessWidget {
                 demoProducts.length,
                 (index) {
                   if (demoProducts[index].isPopular) {
+                    Product product = demoProducts[index];
                     return Padding(
                       padding: const EdgeInsets.only(left: 20),
                       child: ProductCard(
+                        index: heroId,
                         product: demoProducts[index],
                         onPress: () => Navigator.pushNamed(
                           context,
                           DetailsScreen.routeName,
                           arguments: ProductDetailsArguments(
-                              product: demoProducts[index]),
+                              heroId: heroId,
+                              product: product),
                         ),
                       ),
                     );

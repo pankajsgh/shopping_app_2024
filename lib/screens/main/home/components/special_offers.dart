@@ -4,8 +4,11 @@ import '../../../products/products_screen.dart';
 import 'section_title.dart';
 
 class SpecialOffers extends StatelessWidget {
+
+  int heroId;
   SpecialOffers({
     Key? key,
+    required this.heroId,
   }) : super(key: key);
 
   List<Map<String, String>> catList = [

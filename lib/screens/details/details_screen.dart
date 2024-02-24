@@ -77,7 +77,7 @@ class DetailsScreen extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          ProductImages(product: product),
+          ProductImages(product: product, heroId: agrs.heroId,),
           TopRoundedContainer(
             color: Colors.white,
             child: Column(
@@ -119,6 +119,7 @@ class DetailsScreen extends StatelessWidget {
 
 class ProductDetailsArguments {
   final Product product;
+  final int heroId;
 
-  ProductDetailsArguments({required this.product});
+  ProductDetailsArguments({required this.product, required this.heroId});
 }

@@ -14,11 +14,11 @@ class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
   List<Widget> childWidget = [const SizedBox(height: 20),
-    SpecialOffers(),
-    const RecommendedProducts(),
-    const PopularProducts(),
-    const RecommendedProducts(),
-    const PopularProducts(),
+    SpecialOffers(heroId: 0,),
+    RecommendedProducts(heroId: 1,),
+    PopularProducts(heroId: 2,),
+    RecommendedProducts(heroId: 3,),
+    PopularProducts(heroId: 4,),
   ];
 
   @override
@@ -26,7 +26,6 @@ class HomeScreen extends StatelessWidget {
     Color backgroundColor = kPrimaryColor;
 
     return Scaffold(
-
       body:  CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: <Widget>[
@@ -48,7 +47,7 @@ class HomeScreen extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.topLeft,
                     child: Padding(
-                      padding: const EdgeInsets.only(top:40.0),
+                      padding: const EdgeInsets.only(top:52.0),
                       child: Image.asset("assets/images/logo.png", height: 60,
                         color: Colors.white,),
                     ),

@@ -26,12 +26,13 @@ class ProductsScreen extends StatelessWidget {
               crossAxisSpacing: 16,
             ),
             itemBuilder: (context, index) => ProductCard(
+              index: 0,
               product: demoProducts[index],
               onPress: () => Navigator.pushNamed(
                 context,
                 DetailsScreen.routeName,
                 arguments:
-                    ProductDetailsArguments(product: demoProducts[index]),
+                    ProductDetailsArguments(product: demoProducts[index], heroId: 0),
               ),
             ),
           ),

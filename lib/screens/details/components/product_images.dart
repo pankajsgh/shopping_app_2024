@@ -7,18 +7,20 @@ class ProductImages extends StatefulWidget {
   const ProductImages({
     Key? key,
     required this.product,
+    required this.heroId
   }) : super(key: key);
-
   final Product product;
-
+final int heroId;
   @override
   _ProductImagesState createState() => _ProductImagesState();
 }
 
 class _ProductImagesState extends State<ProductImages> {
+
   int selectedImage = 0;
   @override
   Widget build(BuildContext context) {
+    print("${widget.product.id}_${widget.heroId}");
     return Column(
       children: [
         SizedBox(
@@ -35,7 +37,7 @@ class _ProductImagesState extends State<ProductImages> {
             return AspectRatio(
               aspectRatio: 1,
               child: Hero(
-                tag: "${widget.product.id}",
+                tag: "${widget.product.id}_${widget.heroId}",
                   child: Image.asset(widget.product.images[selectedImage])),
             );
           })

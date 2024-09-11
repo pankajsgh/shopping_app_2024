@@ -38,7 +38,7 @@ class _ProductImagesState extends State<ProductImages> {
               aspectRatio: 1,
               child: Hero(
                 tag: "${widget.product.id}_${widget.heroId}",
-                  child: Image.asset(widget.product.images[selectedImage])),
+                  child:widget.product.images[0].contains("https:")?Image.network(widget.product.images[0]):Image.asset(widget.product.images[selectedImage])),
             );
           })
         ),

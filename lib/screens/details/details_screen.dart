@@ -128,3 +128,9 @@ class ProductDetailsArguments {
 
   ProductDetailsArguments({required this.product, required this.heroId});
 }
+
+class ProductCategoryArguments {
+  late final String category;
+
+  ProductCategoryArguments({required this.category});
+}

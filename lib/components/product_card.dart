@@ -38,7 +38,7 @@ class ProductCard extends StatelessWidget {
                 ),
                 child: Hero(
                     tag:"${product.id}_${heroId}",
-                    child: Image.asset(product.images[0])),
+                    child: product.images[0].contains("https:")?Image.network(product.thumbnail?? product.images[0]):Image.asset(product.images[0])),
               ),
             ),
             const SizedBox(height: 8),

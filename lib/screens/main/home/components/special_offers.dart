@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../details/details_screen.dart';
 import '../../../products/products_screen.dart';
 import 'section_title.dart';
 
@@ -19,6 +20,9 @@ class SpecialOffers extends StatelessWidget {
     {
       "image": "assets/images/Image Banner 3.png",
       "category": "Fashion",
+    },
+    { "image": "assets/images/beauty.jpg",
+      "category": "beauty",
     },
     {
       "image": "assets/images/Grocery_shopping.jpg",
@@ -55,7 +59,8 @@ class SpecialOffers extends StatelessWidget {
                   category: catList[index]["category"]?? "",
                   numOfBrands: 18,
                   press: () {
-                    Navigator.pushNamed(context, ProductsScreen.routeName);
+                    Navigator.pushNamed(context, ProductsScreen.routeName, arguments:ProductCategoryArguments(category: catList[index]["category"]?? ""));
+
                   },
                 );
               }),

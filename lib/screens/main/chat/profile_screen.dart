@@ -16,15 +16,11 @@ class Chat extends StatefulWidget {
 }
 
 class _ChatState extends State<Chat> {
-  String _batteryLevel = 'Unknown battery level.';
 
   @override
   void initState() {
     super.initState();
-
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +29,7 @@ class _ChatState extends State<Chat> {
       // appBar: AppBar(
       //   title: const Text("Profile"),
       // ),
-      body: Center(child: Text("Comming Soon"))
+      body: Center(child: Text("Coming Soon"))
     );
   }
 }

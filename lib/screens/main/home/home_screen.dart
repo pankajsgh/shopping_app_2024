@@ -4,6 +4,7 @@ import '../../cart/cart_screen.dart';
 import 'components/categories.dart';
 import 'components/discount_banner.dart';
 import 'components/icon_btn_with_counter.dart';
+import 'components/more_product.dart';
 import 'components/popular_product.dart';
 import 'components/recommended_product.dart';
 import 'components/search_field.dart';
@@ -19,6 +20,7 @@ class HomeScreen extends StatelessWidget {
     PopularProducts(heroId: 2,),
     RecommendedProducts(heroId: 3,),
     PopularProducts(heroId: 4,),
+    MoreProducts(heroId: 5,),
   ];
 
   @override
@@ -47,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.topLeft,
                     child: Padding(
-                      padding: const EdgeInsets.only(top:52.0),
+                      padding: const EdgeInsets.only(top:50.0),
                       child: Image.asset("assets/images/logo.png", height: 60,
                         color: Colors.white,),
                     ),

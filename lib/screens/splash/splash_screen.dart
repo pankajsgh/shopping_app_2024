@@ -40,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
             CustomPaint(
               foregroundPainter: CirclePainter(),
               child: Container(
-                height: 250,
+                height: 240,
               ),
             ),
             Expanded(
@@ -58,6 +58,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 ),
               ),
             ),
+            SizedBox(height: 10,),
             Expanded(
               flex: 2,
               child: Padding(
@@ -82,12 +83,13 @@ class _SplashScreenState extends State<SplashScreen> {
                         ),
                       ),
                     ),
-                    const Spacer(flex: 3),
+                    const Spacer(flex: 2),
                     ElevatedButton(
+                      style: ButtonStyle(backgroundColor:  MaterialStateProperty.all(kPrimaryColor)),
                       onPressed: () {
                         Navigator.pushNamed(context, SignInScreen.routeName);
                       },
-                      child: const Text("Continue"),
+                      child: const Text("Continue", style: TextStyle(color:Colors.white),),
                     ),
                     const Spacer(),
                   ],

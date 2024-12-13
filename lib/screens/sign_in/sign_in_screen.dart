@@ -27,12 +27,13 @@ class _SignInScreenState extends State<SignInScreen> {
           children: [
             Stack(
               children: [
-                CustomPaint(
-                  foregroundPainter: CirclePainter(),
-                  child: Container(
-                    height: 220,
-                  ),
-                ),
+                SizedBox(height: 120,),
+                // CustomPaint(
+                //   foregroundPainter: CirclePainter(),
+                //   child: Container(
+                //     height: 220,
+                //   ),
+                // ),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: IconButton(onPressed: (){
@@ -66,7 +67,7 @@ class _SignInScreenState extends State<SignInScreen> {
               ),
             ),
              Text(
-              isSignUp? "Sign in with your email and password" :"Sign in with your email and password",
+              isSignUp? "Sign in with your email and password" :"Sign up in with your email and password",
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16,),

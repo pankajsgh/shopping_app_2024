@@ -17,10 +17,13 @@ class SplashContent extends StatefulWidget {
 class _SplashContentState extends State<SplashContent> {
   @override
   Widget build(BuildContext context) {
+
+    var size =MediaQuery.of(context).size;
+
     return Column(
       children: <Widget>[
         const Spacer(),
-        Image.asset("assets/images/logo.png", height: 60,),
+        Image.asset("assets/images/logo.png", height: 60, color: kPrimaryColor,),
 
         Text(
           widget.text!,
@@ -29,8 +32,7 @@ class _SplashContentState extends State<SplashContent> {
         const Spacer(flex: 2),
         Image.asset(
           widget.image!,
-          height: 265,
-          width: 235,
+          height: size.height/5,
         ),
       ],
     );

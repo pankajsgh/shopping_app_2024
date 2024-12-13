@@ -1,46 +1,61 @@
 import 'package:flutter/material.dart';
 
 class DiscountBanner extends StatelessWidget {
-  const DiscountBanner({
+   DiscountBanner({
     Key? key,
   }) : super(key: key);
 
-  @override
+  List<String> imgList = ["assets/images/shoes2.png", "assets/images/tshirt.png", "assets/images/shoes2.png", "assets/images/tshirt.png"];
+   List<String> discountText = ["up to 60%", "up to 40%", "up to 60%", "up to 40%"];
+
+
+   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      margin: const EdgeInsets.symmetric(horizontal: 20),
-      decoration: BoxDecoration(
-        color: const Color(0xFF4A3298),
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child:  Row(
-        children: [
-          const Padding(
-            padding: EdgeInsets.only(top: 12.0,left: 12),
-            child: Text.rich(
-              TextSpan(
-                style: TextStyle(color: Colors.white),
+    return SizedBox(
+      height: 160,
+      child: PageView.builder(
+
+        itemCount: 4,
+        itemBuilder: (BuildContext context, int index) {
+          return Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Container(
+              height: 140,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: const Color(0xFF4A3298),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Row(
                 children: [
-                  TextSpan(text: "Last Discount\n"),
-                  TextSpan(
-                    text: "up to 60%",
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
+                  Spacer(),
+                  Text.rich(
+                    TextSpan(
+                      style: TextStyle(color: Colors.white),
+                      children: [
+                        TextSpan(text: "Last Discount\n"),
+                        TextSpan(
+                          text: discountText[index],
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
+                  Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: Image.asset(imgList[index], fit: BoxFit.contain,),
+                  ),
+                  Spacer(),
                 ],
               ),
             ),
-          ),
-          Spacer(),
-          Image.asset("assets/images/shoes2.png", height: 100,),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
-            child: Image.asset("assets/images/tshirt.png", fit: BoxFit.cover,height: 110,),
-          ),
-        ],
+          );
+        },
+
       ),
     );
   }

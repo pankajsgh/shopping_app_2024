@@ -161,7 +161,8 @@ class _SignUpFormState extends State<SignUpForm> {
                 Navigator.pushNamed(context, CompleteProfileScreen.routeName);
               }
             },
-            child: const Text("Continue"),
+            style: ButtonStyle(backgroundColor:  MaterialStateProperty.all(kPrimaryColor)),
+            child: const Text("Continue", style: TextStyle(color:Colors.white),),
           ),
         ],
       ),

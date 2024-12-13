@@ -82,12 +82,12 @@ class HomeScreen extends StatelessWidget {
             backgroundColor: backgroundColor,
             expandedHeight: 226,
             automaticallyImplyLeading: false,
-            flexibleSpace: const FlexibleSpaceBar(
+            flexibleSpace: FlexibleSpaceBar(
                 background: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     DiscountBanner(),
-                    Categories(),
+                    const Categories(),
                   ]
                 )//Images.network
             ),

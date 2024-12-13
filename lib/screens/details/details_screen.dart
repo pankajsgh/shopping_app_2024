@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../../config/constants.dart';
 import '../../models/Product.dart';
 import '../cart/cart_screen.dart';
 import 'components/color_dots.dart';
@@ -113,7 +114,8 @@ class DetailsScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(context, CartScreen.routeName);
               },
-              child: const Text("Add To Cart"),
+              style: ButtonStyle(backgroundColor:  MaterialStateProperty.all(kPrimaryColor)),
+              child: const Text("Add To Cart", style: TextStyle(color: Colors.white),),
             ),
           ),
         ),

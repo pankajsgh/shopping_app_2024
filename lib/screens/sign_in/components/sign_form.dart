@@ -155,7 +155,8 @@ class _SignFormState extends State<SignForm> {
                 Navigator.pushNamed(context, LoginSuccessScreen.routeName);
               }
             },
-            child: const Text("Continue"),
+            style: ButtonStyle(backgroundColor:  MaterialStateProperty.all(kPrimaryColor)),
+            child: const Text("Continue", style: TextStyle(color:Colors.white),),
           ),
         ],
       ),

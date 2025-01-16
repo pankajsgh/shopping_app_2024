@@ -18,6 +18,18 @@ final int heroId;
 class _ProductImagesState extends State<ProductImages> {
 
   int selectedImage = 0;
+
+  final PageController pageController = PageController();
+
+
+
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    pageController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     print("${widget.product.id}_${widget.heroId}");
@@ -28,6 +40,7 @@ class _ProductImagesState extends State<ProductImages> {
           height: 300,
           child: PageView.builder(
               itemCount: widget.product.images.length,
+              controller: pageController,
               onPageChanged: (index){
                 setState(() {
                   selectedImage = index;
@@ -51,8 +64,9 @@ class _ProductImagesState extends State<ProductImages> {
               (index) => SmallProductImage(
                 isSelected: index == selectedImage,
                 press: () {
+                  pageController.animateTo(MediaQuery.of(context).size.width*index, duration: Duration(milliseconds: 500), curve: Curves.ease);
                   setState(() {
-                    selectedImage = index;
+                    // selectedImage = index;
                   });
                 },
                 image: widget.product.images[index],

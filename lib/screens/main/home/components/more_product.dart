@@ -18,10 +18,6 @@ class MoreProducts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    for(var x in jasonProductData["products"])
-      {
-        Product product = Product(id: x["id"], images: x["images"], colors: x["colors"]?? [], title: x["title"], price: x["price"], description: x["description"]);
-      }
 
     return Column(
       children: [

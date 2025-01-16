@@ -22,26 +22,9 @@ class MyApp extends StatelessWidget {
       ),
       // home: const MyHomePage(),
       initialRoute: SplashScreen.routeName,
-      //initialRoute: InitScreen.routeName,
       routes: routes,
     );
   }
 }
 
 
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return  Scaffold(
-      body: Container(
-        color: Colors.red,
-        child: const Center(
-          child: Text("Hi how are you", style: TextStyle(color: Colors.white, fontSize: 40),),
-        )
-      ),
-    );
-  }
-}

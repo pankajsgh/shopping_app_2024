@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app_2024/config/constants.dart';
-import '../../components/socal_card.dart';
+import '../../components/social_card.dart';
 import '../init_screen.dart';
 import 'components/sign_form.dart';
 import 'components/sign_up_form.dart';
@@ -9,7 +9,6 @@ class SignInScreen extends StatefulWidget {
   static String routeName = "/sign_in";
 
   const SignInScreen({super.key});
-
 
   @override
   State<SignInScreen> createState() => _SignInScreenState();
@@ -83,15 +82,15 @@ class _SignInScreenState extends State<SignInScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SocalCard(
+                SocialCard(
                   icon: "assets/icons/google-icon.svg",
                   press: () {},
                 ),
-                SocalCard(
+                SocialCard(
                   icon: "assets/icons/facebook-2.svg",
                   press: () {},
                 ),
-                SocalCard(
+                SocialCard(
                   icon: "assets/icons/twitter.svg",
                   press: () {},
                 ),

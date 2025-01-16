@@ -14,7 +14,8 @@ class HomeScreen extends StatelessWidget {
   static String routeName = "/home";
   HomeScreen({super.key});
 
-  List<Widget> childWidget = [const SizedBox(height: 20),
+  List<Widget> childWidget = [
+    const SizedBox(height: 20),
     SpecialOffers(heroId: 0,),
     RecommendedProducts(heroId: 1,),
     PopularProducts(heroId: 2,),

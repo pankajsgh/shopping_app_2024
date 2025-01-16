@@ -6,13 +6,13 @@ import '../models/Product.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({
-    Key? key,
+    super.key,
     this.width = 140,
     this.aspectRatio = 1.02,
     required this.product,
     required this.onPress,
     required this.heroId
-  }) : super(key: key);
+  });
 
   final double width, aspectRatio;
   final Product product;
@@ -38,7 +38,22 @@ class ProductCard extends StatelessWidget {
                 ),
                 child: Hero(
                     tag:"${product.id}_${heroId}",
-                    child: product.images[0].contains("https:")?Image.network(product.thumbnail?? product.images[0]):Image.asset(product.images[0])),
+                    child: product.images[0].contains("https:")?
+                    Image.network(product.thumbnail?? product.images[0],
+                      loadingBuilder: (BuildContext context, Widget child,
+                          ImageChunkEvent? loadingProgress) {
+                        if (loadingProgress == null) return child;
+                        return Center(
+                          child: CircularProgressIndicator(
+                            value: loadingProgress.expectedTotalBytes != null
+                                ? loadingProgress.cumulativeBytesLoaded /
+                                loadingProgress.expectedTotalBytes!
+                                : null,
+                          ),
+                        );
+                      },
+                    ):
+                    Image.asset(product.images[0])),
               ),
             ),
             const SizedBox(height: 8),
